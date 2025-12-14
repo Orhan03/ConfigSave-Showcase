@@ -8,6 +8,9 @@ ConfigSave ist ein fortgeschrittenes Tool für Unity, das Spielern erlaubt, loka
   <img src="https://github.com/user-attachments/assets/76a43733-5d76-42b7-a5ff-debf196a4fab" width="100%" />
 </div>
 
+
+
+
 💡 Key Features Implemented
 🛡️ 1. Server-Side Security (Row Level Security)
 - nstatt dem Client zu vertrauen, habe ich die Sicherheit direkt in die Datenbank (PostgreSQL/Supabase) verlagert.
