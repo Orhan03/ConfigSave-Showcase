@@ -4,7 +4,7 @@
 
 **ConfigSave** ist ein fortgeschrittenes Tool für Unity, das Spielern erlaubt, lokale Konfigurationsdateien sicher in der Cloud zu speichern und zwischen PCs zu synchronisieren. Es wurde entwickelt, um komplexe Dateistrukturen (rekursiv) zu erkennen und sicher via **Supabase** zu verwalten.
 
-![Status](https://img.shields.io/badge/Status-Active_Prototype-success) ![Engine](https://img.shields.io/badge/Engine-Unity_2022-blue) ![Backend](https://img.shields.io/badge/Backend-Supabase_PostgreSQL-green)
+![Status](https://img.shields.io/badge/Status-Active_Prototype-success) ![Engine](https://img.shields.io/badge/Engine-Unity_2022-blue) ![Backend](https://img.shields.io/badge/Backend-Supabase_PostgreSQL-green) ![Platform](https://img.shields.io/badge/Platform-Windows_10%2F11-0078D6?logo=windows&logoColor=white)
 
 ---
 
@@ -45,16 +45,25 @@ Das Tool liest eine externe JSON-Konfiguration (`game_paths.json`), um installie
 * **SteamID Wildcards:** Automatische Pfadauflösung (z.B. `{UserID}/730/local/cfg`).
 * **Flexible Pfade:** Unterstützung verschiedener Windows-Standardpfade (AppData, Documents, SteamApps).
 
+### 📡 6. Production-Grade Monitoring & Security
+Das Projekt ist für den Live-Betrieb ("Commercial Release") gehärtet:
+* **Crash Reporting (Sentry):** Vollständige Integration von Sentry.io inklusive **IL2CPP Symbol Upload**, um Abstürze auch im kompilierten C++ Code lesbar zu machen (Stack Traces).
+* **Anti-Tamper & DRM:** Implementierung von **Steam DRM** (RestartAppIfNecessary) und Checks gegen DLL-Injection oder manipulierte `steam_appid.txt` Dateien.
+
 ---
 
 ## 🛠️ Tech Stack
 
 | Bereich | Technologie |
 | :--- | :--- |
-| **Engine** | Unity 2022 LTS (C#) |
-| **Backend** | Supabase (PostgreSQL, Storage Buckets) |
+| **Engine** | Unity 2022 LTS (C# / **IL2CPP Backend**) |
+| **Backend** | Supabase (PostgreSQL, Storage Buckets, RLS) |
 | **Auth** | Steamworks.NET (SteamID Integration) |
-| **OS Integration** | User32.dll (Process & Window Detection) |
+| **Monitoring** | **Sentry** (Automated Crash Reporting) |
+| **OS Integration** | **Windows Native** (User32.dll, Registry) |
 | **UI** | Unity uGUI mit Async Feedback Loops |
 
 ---
+
+---
+*Hinweis zur Kompatibilität: Dieses Tool nutzt native Windows-Bibliotheken (user32.dll) zur Prozesserkennung und ist daher exklusiv für Windows-Systeme konzipiert.*
