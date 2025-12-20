@@ -16,6 +16,11 @@
   <p><i>Live-Demo: Upload einer Konfiguration mit automatischer Erkennung und Feedback.</i></p>
 </div>
 
+# Get It Now:
+https://configsave.com/steam
+
+# Website:
+https://configsave.com
 ---
 
 ## 💡 Key Features Implemented
